@@ -71,7 +71,7 @@
 	<key>readme</key>
 	<string># CCF Rankings
 
-An Alfred extension that supports searching CCF rankings by conferences/journals.
+An Alfred workflow that supports searching CCF rankings by conferences/journals.
 </string>
 	<key>uidata</key>
 	<dict>
