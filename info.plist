@@ -88,6 +88,6 @@ An Alfred extension that supports searching CCF rankings by conferences/journals
 	<key>version</key>
 	<string>0.1.0</string>
 	<key>webaddress</key>
-	<string>https://repus.me</string>
+	<string>https://github.com/superpung/alfred-ccf-rankings</string>
 </dict>
 </plist>
