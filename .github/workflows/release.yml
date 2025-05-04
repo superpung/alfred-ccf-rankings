@@ -31,9 +31,9 @@ jobs:
       - name: Build Alfred workflow
         run: ./build.sh
 
-      - name: Upload Alfred Workflow to existing release
-        uses: softprops/action-gh-release@v2
-        with:
-          files: ./dist/ccf-rankings.alfredworkflow
+      - name: Upload Alfred workflow as release asset
+        uses: cli/gh-action@v2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          args: release upload ${{ github.ref_name }} ./dist/ccf-rankings.alfredworkflow --clobber
