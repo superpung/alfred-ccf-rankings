@@ -46,7 +46,7 @@
 				<key>runningsubtext</key>
 				<string></string>
 				<key>script</key>
-				<string>/usr/bin/python3 ./src/main.py -n {query}</string>
+				<string>/usr/bin/python3 -m src -n {query}</string>
 				<key>scriptargtype</key>
 				<integer>0</integer>
 				<key>scriptfile</key>
@@ -86,7 +86,7 @@ An Alfred workflow that supports searching CCF rankings by conferences/journals.
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string>0.1.0</string>
+	<string>0.2.0</string>
 	<key>webaddress</key>
 	<string>https://github.com/superpung/alfred-ccf-rankings</string>
 </dict>

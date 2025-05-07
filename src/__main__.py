@@ -4,19 +4,17 @@ import argparse
 import json
 import os
 
+from src.utils import levenshtein_distance
+
 rankings_data = "src/data/CCF_Ranking_2022.json"
 rankings_icon = "assets/rankings/{rank}.png"
 
 
-def search_results(query):
+def search_results(query, data, num):
     categories = {cat["id"]: f"{cat['english']}" for cat in data["category"]}
-
-    searched_results = [
-        {"entry": _, "category_name": categories.get(_["category_id"], "")}
-        for _ in data["list"]
-        if _["abbr"].lower() == query
-    ]
-    return searched_results
+    sorted_results = sorted(data["list"], key=lambda x: levenshtein_distance(x["abbr"].lower(), query))
+    searched_results = [{"entry": _, "category_name": categories.get(_["category_id"], "")} for _ in sorted_results]
+    return searched_results[:num]
 
 
 def create_alfred_item(entry, category_name):
@@ -64,7 +62,7 @@ if __name__ == "__main__":
 
     query = args.name.lower() if args.name else ""
 
-    searched_results = search_results(query=query)
+    searched_results = search_results(query=query, data=data, num=5)
 
     alfred_items = []
     for result in searched_results[:20]:
