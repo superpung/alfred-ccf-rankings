@@ -6,6 +6,8 @@
 
 An Alfred workflow that supports searching CCF rankings by conferences/journals.
 
+![preview](docs/preview.gif)
+
 ## Installation
 
 > [!note]
